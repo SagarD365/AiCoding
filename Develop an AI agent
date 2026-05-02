@@ -90,7 +90,7 @@ def main():
 
             # Check the response status for failures
             if response.status == "failed":
-            print(f"Response failed: {response.error}")
+                print(f"Response failed: {response.error}")
             
 
             # Show the latest response from the agent
