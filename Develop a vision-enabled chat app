@@ -22,6 +22,12 @@ def main():
         openai_endpoint = os.getenv("ENDPOINT")
         model_deployment =  os.getenv("MODEL_DEPLOYMENT")
 
+        credential = DefaultAzureCredential()
+        project_client = AIProjectClient.from_connection_string(
+            credential=credential,
+            conn_str=project_connection_string
+        )
+
 
         # Create an OpenAI client
         openai_client = project_client.get_openai_client()
